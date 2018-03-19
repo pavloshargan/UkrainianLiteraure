@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ukrlitstorageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'ukrlitstorage.dbo.AuthorPeriphrasis' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="AuthorPeriphrasis">
+          <Property Name="AuthorId" Type="int" />
+          <Property Name="PeriphrasisId" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'ukrlitstorage.dbo.AuthorPlace' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="AuthorPlace">
+          <Property Name="BookId" Type="int" />
+          <Property Name="PlaceId" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'ukrlitstorage.dbo.AuthorPseudonym' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="AuthorPseudonym">
+          <Property Name="AuthorId" Type="int" />
+          <Property Name="PseudonymId" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Authors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sname" Type="nvarchar" MaxLength="50" />
+    <Property Name="YearsOfLife" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'ukrlitstorage.dbo.BookGenre' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="BookGenre">
+          <Property Name="BookId" Type="int" />
+          <Property Name="GenreId" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'ukrlitstorage.dbo.BookHero' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="BookHero">
+          <Property Name="BookId" Type="int" />
+          <Property Name="HeroId" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'ukrlitstorage.dbo.BookPlace' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="BookPlace">
+          <Property Name="BookId" Type="int" />
+          <Property Name="PlaceId" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Books">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="AuthorId" Type="int" />
+    <Property Name="Theme" Type="nvarchar" MaxLength="300" />
+    <Property Name="Dedication" Type="nvarchar" MaxLength="300" />
+    <Property Name="Descr" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'ukrlitstorage.dbo.BookStyle' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="BookStyle">
+          <Property Name="BookId" Type="int" />
+          <Property Name="StyleId" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Eses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="ThemeName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Text" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Genres">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameGenre" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Heroes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="Periphrases">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="Places">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Pseudonyms">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Styles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameStyle" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <!--Errors Found During Generation:
+error 6004: The table 'ukrlitstorage.dbo.AuthorPeriphrasis' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__AuthorPer__Autho__32E0915F" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'ukrlitstorage.dbo.AuthorPeriphrasis' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__AuthorPer__Perip__33D4B598" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'ukrlitstorage.dbo.AuthorPlace' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__AuthorPla__BookI__300424B4" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'ukrlitstorage.dbo.AuthorPlace' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__AuthorPla__Place__30F848ED" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'ukrlitstorage.dbo.AuthorPseudonym' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__AuthorPse__Autho__35BCFE0A" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'ukrlitstorage.dbo.AuthorPseudonym' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__AuthorPse__Pseud__36B12243" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'ukrlitstorage.dbo.BookGenre' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__BookGenre__BookI__3B75D760" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'ukrlitstorage.dbo.BookGenre' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__BookGenre__Genre__3C69FB99" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'ukrlitstorage.dbo.BookHero' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__BookHero__BookId__412EB0B6" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'ukrlitstorage.dbo.BookHero' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__BookHero__HeroId__4222D4EF" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'ukrlitstorage.dbo.BookPlace' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__BookPlace__BookI__440B1D61" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'ukrlitstorage.dbo.BookPlace' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__BookPlace__Place__44FF419A" />-->
+  <Association Name="FK__Books__AuthorId__398D8EEE">
+    <End Role="Authors" Type="Self.Authors" Multiplicity="0..1" />
+    <End Role="Books" Type="Self.Books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authors">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Books">
+        <PropertyRef Name="AuthorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+error 6004: The table 'ukrlitstorage.dbo.BookStyle' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__BookStyle__BookI__3E52440B" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'ukrlitstorage.dbo.BookStyle' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__BookStyle__Style__3F466844" />-->
+  <EntityContainer Name="ukrlitstorageModelStoreContainer">
+    <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Eses" EntityType="Self.Eses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Genres" EntityType="Self.Genres" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Heroes" EntityType="Self.Heroes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Periphrases" EntityType="Self.Periphrases" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Places" EntityType="Self.Places" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pseudonyms" EntityType="Self.Pseudonyms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Styles" EntityType="Self.Styles" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Books__AuthorId__398D8EEE" Association="Self.FK__Books__AuthorId__398D8EEE">
+      <End Role="Authors" EntitySet="Authors" />
+      <End Role="Books" EntitySet="Books" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
